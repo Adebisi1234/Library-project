@@ -41,8 +41,13 @@ newBook.addEventListener('click', addBookToLibrary)
 function addBookToLibrary() {
     let obj = new Book(title.value, author.value, pages.valueAsNumber, Isread.textContent)
     newArr.push(obj)
-    console.log(newArr)
-    console.log(obj)
+    grid.innerHTML += `<div class="card color-white">
+    <h3>${newArr[newArr.length-1].title}</h3>
+    <p>${newArr[newArr.length-1].author}</p>
+    <p>${newArr[newArr.length-1].pages}</p>
+    <p>${newArr[newArr.length-1].read}</p>
+    </div>`
+    closeModal()
 }
 
 function readOrNot() {
@@ -68,3 +73,11 @@ function closeModal() {
 
 
 
+newArr.forEach((x) => {
+    grid.innerHTML += `<div class="card color-white">
+    <h3>${x.title}</h3>
+    <p>${x.author}</p>
+    <p>${x.pages}</p>
+    <p>${x.read}</p>
+    </div>`
+})
