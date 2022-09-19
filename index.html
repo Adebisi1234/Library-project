@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Objects and constructors</title>
+</head>
+<body>
+    <div class="container">
+        <div class="flex align-center justify-center flex-col">
+            <button class="add">Add Book</button>
+        </div>
+        <div class="grid">
+            <div class="card flex flex-col" data-index="0">
+                <h3 class="color-white">Title:title</h3>
+                <p class="color-white">author:author</p>
+                <p class="color-white">pages: 234</p>
+                <p class="color-white">not read</p>
+            </div>
+            <div class="card flex flex-col" data-index="1">
+                <h3 class="color-white">Title:title</h3>
+                <p class="color-white">author:author</p>
+                <p class="color-white">pages: 234</p>
+                <p class="color-white">not read</p>
+            </div>
+            <div class="card flex flex-col" data-index="2">
+                <h3 class="color-white">Title:title</h3>
+                <p class="color-white">author:author</p>
+                <p class="color-white">pages: 234</p>
+                <p class="color-white">not read</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-container fixed flex align-center justify-center">
+        <div class="modal-content flex flex-col">
+            <div class="flex cancel">
+                <span class="">x</span>
+            </div>
+            <div class="flex flex-col fieldset align-center">
+                <legend>Book Details</legend>
+                <form class="flex flex-col">
+                    <div class="title">
+                        <label for="title">Title:</label>
+                        <input id="title" type="text" placeholder="'The Hobbit">
+                    </div>
+                    <div class="author">
+                        <label for="author">Author:</label>
+                        <input type="text" name="author" id="author" placeholder="J.R.R Tolkien">
+                    </div>
+                    <div class="pages">
+                        <label for="pages">Pages:</label>
+                        <input type="number" name="pages" id="pages" placeholder="295">
+                    </div>
+                    <div class="read">
+                        <div class="read blue">Read</div>
+                    </div>
+                </form>
+            </div>
+            <button class="new">ADD</button>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

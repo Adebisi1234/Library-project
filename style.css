@@ -1,0 +1,101 @@
+.flex {
+    display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+.container {
+    border: 2px solid black;
+    height: 100vh;
+    width: 100vw;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.modal-content {
+    background-color: white;
+    box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.949);
+    width: 80%;
+    height: 80%;
+    gap: 30px;
+    padding: 10px;
+
+}
+
+.modal-container {
+    left: 0;
+    right: 0;
+    top: -100;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.26);
+}
+
+.top-0 {
+    top: 0;
+}
+
+.transition {
+    transition: all 3s ease-in-out;
+}
+
+.cancel {
+    align-self: flex-end;
+    justify-self: right;
+    text-align: right;
+}
+
+.fieldset, form {
+    row-gap: 10px;
+    justify-content: center;
+    height: 100%;
+    font-size: larger;
+    text-align: center;
+}
+
+.new {
+    width: fit-content;
+    align-self: center;
+    font-size: larger;
+    padding: 6%;
+    background-color: black;
+    color: white;
+    box-shadow: 3px 2px 2px brown;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+}
+
+.grid {
+    border: 1px solid red;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    padding: 3%;
+    background-color: blueviolet;
+    justify-content: center;
+    font-size: medium;
+    text-align: center;
+    height: fit-content;
+}
+
+.color-white {
+    color: white;
+}
