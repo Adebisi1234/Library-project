@@ -1,11 +1,9 @@
 const newArr = []
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
-const pages = document.querySelector('#pages')
+const Ititle = document.querySelector('#title');
+const Iauthor = document.querySelector('#author');
+const Ipages = document.querySelector('#pages')
 const grid = document.querySelector('.grid')
-
-
-
+const Iread = document.querySelector('.read')
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -29,36 +27,9 @@ const modal = document.querySelector('.modal-container');
 const modalContent = document.querySelector('.modal-content');
 const add = document.querySelector('.add');
 const cancel = document.querySelector('.cancel');
-const Isread = document.querySelector('.read')
-const newBook = document.querySelector('.new')
 
-Isread.addEventListener('click', readOrNot)
 add.addEventListener('click', showModal)
 cancel.addEventListener('click', closeModal)
-newBook.addEventListener('click', addBookToLibrary)
-
-
-function addBookToLibrary() {
-    let obj = new Book(title.value, author.value, pages.valueAsNumber, Isread.textContent)
-    newArr.push(obj)
-    grid.innerHTML += `<div class="card color-white">
-    <h3>${newArr[newArr.length-1].title}</h3>
-    <p>${newArr[newArr.length-1].author}</p>
-    <p>${newArr[newArr.length-1].pages}</p>
-    <p>${newArr[newArr.length-1].read}</p>
-    </div>`
-    closeModal()
-}
-
-function readOrNot() {
-    if(this.innerText.toLowerCase() === 'read') {
-        this.innerText = 'not read yet'
-        this.classList.add('blue')
-    }else {
-        this.innerText = 'read'
-        this.classList.add('blue')
-    }
-}
 
 function showModal() {
     modal.classList.add('top-0')
@@ -71,13 +42,21 @@ function closeModal() {
 }
 
 
+let title = document.createElement('p')
+let author = document.createElement('p')
+let pages = document.createElement('p')
+let readBtn = document.createElement('button')
+let delBtn = document.createElement('button')
+let card = document.createElement('div')
+card.classList.add('card')
 
+title.textContent = Ititle.value
+author.textContent = Iauthor.value
+pages.textContent = Ipages.value
 
-newArr.forEach((x) => {
-    grid.innerHTML += `<div class="card color-white">
-    <h3>${x.title}</h3>
-    <p>${x.author}</p>
-    <p>${x.pages}</p>
-    <p>${x.read}</p>
-    </div>`
-})
+card.appendChild(title)
+card.appendChild(author)
+card.appendChild(pages)
+card.appendChild(readBtn)
+
+grid.appendChild(card)
