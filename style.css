@@ -15,6 +15,7 @@
 .container {
     border: 2px solid black;
     width: 100vw;
+    flex: 9;
 }
 
 .fixed {
@@ -24,7 +25,7 @@
 .modal-content {
     background-color: white;
     box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.949);
-    width: 80%;
+    width: 60%;
     height: 80%;
     gap: 30px;
     padding: 10px;
@@ -68,7 +69,7 @@
     padding: 6%;
     background-color: black;
     color: white;
-    box-shadow: 3px 2px 2px brown;
+    box-shadow: 3px 2px 2px wheat;
 }
 
 .blue {
@@ -79,11 +80,13 @@
 
 .grid {
     border: 1px solid red;
-    flex: 1;
+    background-color: rgb(85, 108, 128);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    height: 75%;
     padding: 40px;
+    flex: auto;
 }
 
 .card {
@@ -100,9 +103,33 @@
 }
 
 .add-book {
-    height: 20vh;
+    height: 10%;
 }
 
-.grid {
-    height: 80vh;
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.add {
+    font-size: large;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    outline: none;
+    border: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    display: none;
+}
+
+body > * {
+    flex: 1;
 }

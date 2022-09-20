@@ -34,11 +34,13 @@ cancel.addEventListener('click', closeModal)
 
 function showModal() {
     modal.classList.add('top-0')
+    modal.classList.remove('display')
     modalContent.classList.add('top-0')
 }
 
 function closeModal() {
     modal.classList.remove('top-0')
+    modal.classList.add('display')
     modalContent.classList.remove('top-0')
 }
 
