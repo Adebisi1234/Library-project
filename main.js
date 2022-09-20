@@ -43,11 +43,22 @@ function closeModal() {
 }
 
 
+Iread.addEventListener('click', () => {
+    if(Iread.textContent === 'read'){
+        Iread.textContent = 'not read'
+        Iread.classList.add('blue')
+    } else {
+        Iread.textContent = 'read'
+        Iread.classList.add('blue')
+    }
+})
 
 addBook.addEventListener('click', addNew)
 
 function addNew() {
+    let newBook = new Book(Ititle.value, Iauthor.value, Ipages.value, Iread.value)
 
+    newArr.push(newBook)
     let title = document.createElement('p')
     let author = document.createElement('p')
     let pages = document.createElement('p')
@@ -55,6 +66,7 @@ function addNew() {
     let delBtn = document.createElement('button')
     let card = document.createElement('div')
     card.classList.add('card')
+    card.classList.add('color-white')
     
     readBtn.addEventListener('click', () => {
         if(readBtn.textContent === 'read'){
@@ -80,6 +92,45 @@ function addNew() {
     card.appendChild(readBtn)
     card.appendChild(delBtn)
     grid.appendChild(card)
+    console.log(newArr)
     closeModal()
 }
 
+
+newArr.forEach((x) => {
+    let title = document.createElement('p')
+    let author = document.createElement('p')
+    let pages = document.createElement('p')
+    let readBtn = document.createElement('button')
+    let delBtn = document.createElement('button')
+    let card = document.createElement('div')
+    card.classList.add('card')
+    card.classList.add('color-white')
+    
+    readBtn.addEventListener('click', () => {
+        if(readBtn.textContent === 'read'){
+            readBtn.textContent = 'not read'
+        } else {
+            readBtn.textContent = 'read'
+        }
+    })
+
+    delBtn.addEventListener('click', (e) => {
+        grid.removeChild(e.target.parentNode)
+    })
+    
+    title.textContent = x.title
+    author.textContent = x.author
+    pages.textContent = x.pages
+    readBtn.textContent = x.read
+    delBtn.textContent = 'delete'
+    
+    card.appendChild(title)
+    card.appendChild(author)
+    card.appendChild(pages)
+    card.appendChild(readBtn)
+    card.appendChild(delBtn)
+    grid.appendChild(card)
+})
+
+console.log(newArr)
