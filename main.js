@@ -4,6 +4,7 @@ const Iauthor = document.querySelector('#author');
 const Ipages = document.querySelector('#pages')
 const grid = document.querySelector('.grid')
 const Iread = document.querySelector('.read')
+const addBook = document.querySelector('.new') 
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -42,21 +43,43 @@ function closeModal() {
 }
 
 
-let title = document.createElement('p')
-let author = document.createElement('p')
-let pages = document.createElement('p')
-let readBtn = document.createElement('button')
-let delBtn = document.createElement('button')
-let card = document.createElement('div')
-card.classList.add('card')
 
-title.textContent = Ititle.value
-author.textContent = Iauthor.value
-pages.textContent = Ipages.value
+addBook.addEventListener('click', addNew)
 
-card.appendChild(title)
-card.appendChild(author)
-card.appendChild(pages)
-card.appendChild(readBtn)
+function addNew() {
 
-grid.appendChild(card)
+    let title = document.createElement('p')
+    let author = document.createElement('p')
+    let pages = document.createElement('p')
+    let readBtn = document.createElement('button')
+    let delBtn = document.createElement('button')
+    let card = document.createElement('div')
+    card.classList.add('card')
+    
+    readBtn.addEventListener('click', () => {
+        if(readBtn.textContent === 'read'){
+            readBtn.textContent = 'not read'
+        } else {
+            readBtn.textContent = 'read'
+        }
+    })
+
+    delBtn.addEventListener('click', (e) => {
+        grid.removeChild(e.target.parentNode)
+    })
+    
+    title.textContent = Ititle.value
+    author.textContent = Iauthor.value
+    pages.textContent = Ipages.value
+    readBtn.textContent = Iread.textContent
+    delBtn.textContent = 'delete'
+    
+    card.appendChild(title)
+    card.appendChild(author)
+    card.appendChild(pages)
+    card.appendChild(readBtn)
+    card.appendChild(delBtn)
+    grid.appendChild(card)
+    closeModal()
+}
+
